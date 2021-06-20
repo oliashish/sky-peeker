@@ -10,11 +10,15 @@ body {
     height: 100vh;
     margin: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background: linear-gradient(#ddd6f3, #faaca8);
 }
 .weather-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     width: 60%;
     margin: auto;
     height: 70%;
@@ -24,8 +28,12 @@ body {
     z-index: 1;
     box-shadow: 2px 2px 30px 2px rgb(92, 92, 92);
 }
+.left-align {
+    display: flex;
+    justify-content: space-around;
+}
 
-h1 {
+.title {
     color: rgb(235, 235, 235);
     text-align: center;
     z-index: 2;
@@ -34,8 +42,8 @@ h1 {
 }
 
 .search-bar {
-    width: 60%;
-    margin: 5rem auto;
+    width: 100%;
+    margin: 3rem auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,4 +67,13 @@ input {
 }
 input:focus {
     outline: none;
+}
+
+.weather-result {
+    width: 100%;
+    margin: auto;
+
+    color: rgb(92, 87, 60);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serifs;
 }
