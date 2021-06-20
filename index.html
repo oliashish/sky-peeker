@@ -20,42 +20,60 @@
     <body>
         <div class="container">
             <div class="weather-card">
-                <h1>SKY PEEKER</h1>
+                <div class="left-align">
+                    <div class="title-search-container">
+                        <h1 class="title">SKY PEEKER</h1>
 
-                <div class="search-bar">
-                    <input id="cityInp" type="text" placeholder="enter city name..." />
-
-                    <div id="search" class="search-icon" onclick="getWeather()">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="h-3 w-3"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="whitesmoke"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                        <div class="search-bar">
+                            <input
+                                id="cityInp"
+                                type="text"
+                                placeholder="enter city name..."
                             />
-                        </svg>
+
+                            <div
+                                id="search"
+                                class="search-icon"
+                                onclick="getWeather()"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-3 w-3"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="whitesmoke"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                                    />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="temp">
+                        <h1 class="temperature">temp</h1>
+                        <p class="sunrise">sunraise</p>
+                        <p class="sunset">sun set</p>
                     </div>
                 </div>
                 <div class="weather-result">
                     <div class="city-weather-info">
                         <div class="city-date">
-                            <h2>city name</h2>
-                            <h4>date</h4>
+                            <h2 class="city"></h2>
+                            <p class="country"></p>
+    
+                            <p class="date"></p>
                         </div>
-                        <div class="weather-icon"><h3>weather icons</h3></div>
-                    </div>
-                    <div class="temperature-details">
-                        <h2>temp</h2>
-                        <p>extras</p>
+                        <div class="weather">
+                            <h1 class="main-weather"></h1>
+                        </div>
                     </div>
                 </div>
             </div>
+           
         </div>
     </body>
 </html>
