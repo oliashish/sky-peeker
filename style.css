@@ -35,7 +35,7 @@ h1 {
 
 .search-bar {
     width: 60%;
-    margin: 5rem auto;
+    margin: 3rem auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,4 +59,13 @@ input {
 }
 input:focus {
     outline: none;
+}
+.weather-result{
+    width: 100%;
+    height: 60%;
+    margin: auto;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
