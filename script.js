@@ -31,14 +31,20 @@ const renderData = (data) => {
     sunrise = new Date(sunrise * 1000).toLocaleTimeString();
     sunset = new Date(sunset * 1000).toLocaleTimeString();
 
+    let tempCelsius = temp - 273.15;
+    tempCelsius = tempCelsius.toFixed(2);
+    let degree = "oC";
+
     $(".weather-result").show();
     $(".temp").show();
 
     $(".city").text(city);
     $(".country").text(country);
     $(".main-weather").text(main);
-    $(".icon").text(icon);
-    $(".temperature").text(temp);
+
+    $(".temperature")
+        .empty()
+        .append(tempCelsius + `&deg;c`);
     $(".sunrise").text(sunrise);
     $(".sunset").text(sunset);
     $(".date").text(date);
