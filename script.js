@@ -12,8 +12,8 @@ const tmpt = document.getElementById("tmpt");
 const cty = document.getElementById("cty");
 const cntry = document.getElementById("cntry");
 const img = document.getElementById("img");
-const sunrise = document.getElementById("sunrise");
-const sunset = document.getElementById("sunset");
+const snrs = document.getElementById("snrs");
+const snst = document.getElementById("snst");
 
 //initally result containers are hidden
 
@@ -66,10 +66,10 @@ const renderData = (data) => {
     }
 
     cty.innerHTML = city;
-    tmpt.innerHTML = temp;
+    tmpt.innerHTML = temp + `&deg;C`;
+    snrs.innerHTML = sunrise;
+    snst.innerHTML = sunset;
     dateCurrent.innerHTML = date;
     cntry.innerHTML = country;
-    sunrise.innerHTML = sunrise;
-    sunset.innerHTML = sunset;
     mainWeather.innerHTML = main;
 };
