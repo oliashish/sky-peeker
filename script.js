@@ -65,10 +65,9 @@ const renderData = (data) => {
         weatherCard.style.justifyContent = "space-around";
     }
 
+
     cty.innerHTML = city;
     tmpt.innerHTML = temp + `&deg;C`;
-    snrs.innerHTML = sunrise;
-    snst.innerHTML = sunset;
     dateCurrent.innerHTML = date;
     cntry.innerHTML = country;
     mainWeather.innerHTML = main;
