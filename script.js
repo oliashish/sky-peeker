@@ -1,9 +1,28 @@
-// result div hidden in the initial state
-
 const APP_KEY = "6bad85b265b91bfc99a1faadf8faab09";
 
-$(".weather-result").hide();
-$(".temp").hide();
+// getting all element access that are required
+
+const weatherResult = document.getElementById("weatherResult");
+const tempt = document.getElementById("tempt");
+
+const weatherCard = document.getElementById("weatherCard");
+const dateCurrent = document.getElementById("dateCurrent");
+const mainWeather = document.getElementById("mainWeather");
+const tmpt = document.getElementById("tmpt");
+const cty = document.getElementById("cty");
+const cntry = document.getElementById("cntry");
+const img = document.getElementById("img");
+const sunrise = document.getElementById("sunrise");
+const sunset = document.getElementById("sunset");
+
+//initally result containers are hidden
+
+weatherResult.style.visibility = "hidden";
+tempt.style.visibility = "hidden";
+
+if (weatherResult.style.visibility == "hidden") {
+    weatherCard.style.justifyContent = "center";
+}
 
 const getWeather = async () => {
     let cityInp = document.getElementById("cityInp").value;
@@ -12,7 +31,9 @@ const getWeather = async () => {
     renderData(data);
 };
 
-fetchData = async (cityInp) => {
+const fetchData = async (cityInp) => {
+    // api call
+
     let data = await fetch(
         `http://api.openweathermap.org/data/2.5/weather?q=${cityInp}&appid=${APP_KEY}`
     );
@@ -22,6 +43,8 @@ fetchData = async (cityInp) => {
 };
 
 const renderData = (data) => {
+    //destructing data
+
     let city = data.name;
     let { country, sunrise, sunset } = data.sys;
     let { main, icon } = data.weather[0];
@@ -31,21 +54,22 @@ const renderData = (data) => {
     sunrise = new Date(sunrise * 1000).toLocaleTimeString();
     sunset = new Date(sunset * 1000).toLocaleTimeString();
 
-    let tempCelsius = temp - 273.15;
-    tempCelsius = tempCelsius.toFixed(2);
-    let degree = "oC";
+    // from kelvin to celsius
+    temp = temp - 273.15;
+    temp = temp.toFixed(1);
 
-    $(".weather-result").show();
-    $(".temp").show();
+    weatherResult.style.visibility = "visible";
+    tempt.style.visibility = "visible";
 
-    $(".city").text(city);
-    $(".country").text(country);
-    $(".main-weather").text(main);
+    if (weatherResult.style.visibility == "visible") {
+        weatherCard.style.justifyContent = "space-around";
+    }
 
-    $(".temperature")
-        .empty()
-        .append(tempCelsius + `&deg;c`);
-    $(".sunrise").text(sunrise);
-    $(".sunset").text(sunset);
-    $(".date").text(date);
+    cty.innerHTML = city;
+    tmpt.innerHTML = temp;
+    dateCurrent.innerHTML = date;
+    cntry.innerHTML = country;
+    sunrise.innerHTML = sunrise;
+    sunset.innerHTML = sunset;
+    mainWeather.innerHTML = main;
 };
