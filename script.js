@@ -2,6 +2,8 @@ const APP_KEY = "6bad85b265b91bfc99a1faadf8faab09";
 
 // getting all element access that are required
 
+const search = document.getElementById("search");
+
 const weatherResult = document.getElementById("weatherResult");
 const tempt = document.getElementById("tempt");
 
@@ -23,6 +25,10 @@ tempt.style.visibility = "hidden";
 if (weatherResult.style.visibility == "hidden") {
     weatherCard.style.justifyContent = "center";
 }
+
+search.addEventListener("click", () => {
+    getWeather();
+});
 
 const getWeather = async () => {
     let cityInp = document.getElementById("cityInp").value;
@@ -65,11 +71,14 @@ const renderData = (data) => {
         weatherCard.style.justifyContent = "space-around";
     }
 
+
     if (main == "Clear") img.src = "/images/clearsky.png";
     if (main == "Clouds") img.src = "/images/cloud.png";
     if (main == "Haze") img.src = "/images/haze.png";
     if (main == "Rain") img.src = "/images/rain.png";
     if (main == "Snow") img.src = "/images/snowfall.png";
+
+
 
     cty.innerHTML = city;
     tmpt.innerHTML = temp + `&deg;C`;
