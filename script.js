@@ -6,6 +6,7 @@ const search = document.getElementById("search");
 
 const weatherResult = document.getElementById("weatherResult");
 const tempt = document.getElementById("tempt");
+const bgContainer = document.getElementById("bgContainer");
 
 const weatherCard = document.getElementById("weatherCard");
 const dateCurrent = document.getElementById("dateCurrent");
@@ -71,14 +72,31 @@ const renderData = (data) => {
         weatherCard.style.justifyContent = "space-around";
     }
 
-
-    if (main == "Clear") img.src = "/images/clearsky.png";
-    if (main == "Clouds") img.src = "/images/cloud.png";
-    if (main == "Haze") img.src = "/images/haze.png";
-    if (main == "Rain") img.src = "/images/rain.png";
-    if (main == "Snow") img.src = "/images/snowfall.png";
-
-
+    if (main == "Clear") {
+        img.src = "/images/clearsky.png";
+        bgContainer.style.background = "url('/images/bgclear.jpg') no-repeat";
+        bgContainer.style.backgroundSize = "cover";
+    }
+    if (main == "Clouds") {
+        img.src = "/images/cloud.png";
+        bgContainer.style.background = "url('/images/bgcloud.jpeg') no-repeat";
+        bgContainer.style.backgroundSize = "cover";
+    }
+    if (main == "Haze") {
+        img.src = "/images/haze.png";
+        bgContainer.style.background = "url('/images/bghaze.png') no-repeat";
+        bgContainer.style.backgroundSize = "cover";
+    }
+    if (main == "Rain") {
+        img.src = "/images/rain.png";
+        bgContainer.style.background = "url('/images/bgrain.jpeg') no-repeat";
+        bgContainer.style.backgroundSize = "cover";
+    }
+    if (main == "Snow") {
+        img.src = "/images/snowfall.png";
+        bgContainer.style.background = "url('/images/bgsnow.jpg') no-repeat";
+        bgContainer.style.backgroundSize = "cover";
+    }
 
     cty.innerHTML = city;
     tmpt.innerHTML = temp + `&deg;C`;
