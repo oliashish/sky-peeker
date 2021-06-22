@@ -42,7 +42,7 @@ const fetchData = async (cityInp) => {
     // api call
 
     let data = await fetch(
-        `http://api.openweathermap.org/data/2.5/weather?q=${cityInp}&appid=${APP_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${cityInp}&appid=${APP_KEY}`
     );
 
     let jsonWeatherdata = await data.json();
