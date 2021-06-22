@@ -53,7 +53,7 @@ const renderData = (data) => {
 
     let city = data.name;
     let { country, sunrise, sunset } = data.sys;
-    let { main, icon } = data.weather[0];
+    let { main } = data.weather[0];
     let { temp } = data.main;
     let { dt: date } = data;
     date = new Date(date * 1000).toLocaleDateString();
@@ -70,6 +70,15 @@ const renderData = (data) => {
     if (weatherResult.style.visibility == "visible") {
         weatherCard.style.justifyContent = "space-around";
     }
+
+
+    if (main == "Clear") img.src = "/images/clearsky.png";
+    if (main == "Clouds") img.src = "/images/cloud.png";
+    if (main == "Haze") img.src = "/images/haze.png";
+    if (main == "Rain") img.src = "/images/rain.png";
+    if (main == "Snow") img.src = "/images/snowfall.png";
+
+
 
     cty.innerHTML = city;
     tmpt.innerHTML = temp + `&deg;C`;
