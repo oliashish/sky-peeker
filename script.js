@@ -1,4 +1,4 @@
-const APP_KEY = "6bad85b265b91bfc99a1faadf8faab09";
+import WEATHER_API_KEY from "./apikey.js";
 
 // getting all element access that are required
 
@@ -42,7 +42,7 @@ const fetchData = async (cityInp) => {
     // api call
 
     let data = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${cityInp}&appid=${APP_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${cityInp}&appid=${WEATHER_API_KEY}`
     );
 
     let jsonWeatherdata = await data.json();
